@@ -1,0 +1,11 @@
+# dbt_semantic_layer/models/sources.yml
+version: 2
+
+sources:
+  - name: meds
+    schema: main
+    tables:
+      - name: event_stream
+        # DuckDB will read the parquet file directly from the file path
+        meta:
+          external_location: "../data/meds/data.parquet"

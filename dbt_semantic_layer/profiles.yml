@@ -1,0 +1,9 @@
+# dbt_semantic_layer/profiles.yml
+ehr_meds_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # This creates a local DuckDB file in your root directory
+      path: ../ehr_data.duckdb 
+      schema: main

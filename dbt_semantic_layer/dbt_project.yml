@@ -1,0 +1,15 @@
+# dbt_semantic_layer/dbt_project.yml
+name: 'ehr_meds_semantic_layer'
+version: '1.0.0'
+config-version: 2
+
+profile: 'ehr_meds_dbt'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  ehr_meds_semantic_layer:
+    # We will materialize everything as tables so Power BI can easily import them
+    materialized: table
