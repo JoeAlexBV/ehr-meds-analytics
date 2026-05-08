@@ -34,7 +34,7 @@ dbt_modules/
 # =========================
 # Power BI backup and temp files
 *.pbix.pbixBackup
-~$*.pbix
+*.pbix
 
 # =========================
 # OS & IDE
