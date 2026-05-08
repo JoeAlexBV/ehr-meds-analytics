@@ -1,4 +1,7 @@
 -- dbt_semantic_layer/models/dim_patients.sql
+
+{{ config(materialized='external', location='../data/marts/dim_patients.parquet') }}
+
 with birth_events as (
     select 
         subject_id as patient_id, 

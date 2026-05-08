@@ -1,4 +1,7 @@
 -- dbt_semantic_layer/models/fact_diagnoses.sql
+
+{{ config(materialized='external', location='../data/marts/fact_diagnoses.parquet') }}
+
 select
     subject_id as patient_id,
     time as diagnosis_date,
