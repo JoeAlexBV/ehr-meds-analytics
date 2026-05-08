@@ -1,0 +1,44 @@
+# =========================
+# Python & Environment
+# =========================
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+
+# =========================
+# Data Files & Outputs
+# =========================
+*.parquet
+*.csv
+*.json
+data/raw/*
+data/meds/*
+data/marts/*
+
+# =========================
+# dbt & DuckDB
+# =========================
+target/
+dbt_packages/
+logs/
+dbt_modules/
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp
+
+# =========================
+# Power BI
+# =========================
+# Power BI backup and temp files
+*.pbix.pbixBackup
+~$*.pbix
+
+# =========================
+# OS & IDE
+# =========================
+.DS_Store
+.vscode/
+.idea/
