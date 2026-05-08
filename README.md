@@ -2,6 +2,9 @@
 
 An end-to-end Data Engineering and Analytics pipeline that extracts raw Electronic Health Record (EHR) data, standardizes it into the Medical Event Data Standard (MEDS v0.3), and models it into a Parquet-backed Star Schema for Power BI consumption.
 
+![Dashboard Preview](dashboard_preview_1.png)
+![Dashboard Preview](dashboard_preview_2.png)
+
 ## Architecture Overview
 
 This project uses a decoupled, three-tier architecture:
