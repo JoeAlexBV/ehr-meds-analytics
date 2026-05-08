@@ -25,3 +25,24 @@ python -m venv venv
 source venv/bin/activate  # Mac/Linux
 # venv/Scripts/activate   # Windows
 pip install polars faker dbt-duckdb
+```
+
+### 2. Generate Source Data
+Note: In production, this layer is replaced by the Snowflake Python Connector.
+```bash
+python src/extractors/mock_data_generator.py
+```
+
+### 3. Run the MEDS ETL Pipeline
+Standardizes demographic, diagnosis, and laboratory data into the MEDS v0.3 specification.
+```bash
+python src/transformers/meds_mapper.py
+```
+
+### 4. Build the Star Schema (dbt)
+Transforms the MEDS event stream into business-ready Fact and Dimension tables.
+```bash
+cd dbt_semantic_layer
+dbt run --profiles-dir .
+```
+The resulting modeled data will be output to data/marts/ as Parquet files, ready for Power BI.
